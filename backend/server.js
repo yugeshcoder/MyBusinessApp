@@ -26,7 +26,7 @@ mongoose.connect(process.env.MONGO_URI)
 .then(() => {
   //listen for request
     app.listen(3000,() =>{
-    console.log('listening on port.')
+    console.log('listening on port..')
   })
 })
 .catch((err) => {

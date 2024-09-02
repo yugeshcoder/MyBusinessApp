@@ -89,13 +89,32 @@ const productCost = {
   AE_45_28_1: 40
 };
 
-
+let labourTotal = 0;
+let productTotal = 0;
+export function getProductTotal(){
+  return {labourTotal,productTotal};
+}
 
 const TableBody = ({data}) => {
   const [info, setInfo] = useState(Array.isArray(data) ? data : []);
   useEffect(() => {
   setInfo(data); // Update info when data prop changes
   console.log(data); // Debugging the data prop
+
+  let labourCalculatedTotal = 0;
+  data.forEach(labour =>{
+    labourCalculatedTotal += (Number(labour.total)) * labourCost[labour.model];
+  });
+
+  let productCalculatedTotal = 0;
+  data.forEach(product =>{
+    const productTotalKey = `${product.model}_${product.q}`;
+    productCalculatedTotal +=(Number(product.total) * productCost[productTotalKey]);
+  });
+
+  labourTotal = labourCalculatedTotal;
+  productTotal = productCalculatedTotal;
+
   },[data] ); // Dependency array with data
   return(
     <tbody>

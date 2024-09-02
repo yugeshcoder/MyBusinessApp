@@ -1,6 +1,7 @@
 const express = require('express')
 const product = require('../models/companyModel')
 const rawProduct = require('../models/rawProductModel')
+const soldProduct = require('../models/soldProduct')
 
 const router = express.Router()
 
@@ -58,6 +59,36 @@ router.get('/rawProduct/comp2', async (req, res) => {
   }
 });
 
+router.get('/soldProduct', async (req, res) => {
+  try {
+    const soldProducts = await soldProduct.find();
+    console.log(soldProducts)
+    res.json(soldProducts);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.get('/soldProduct/comp1', async (req, res) => {
+  try {
+    const rawProducts = await rawProduct.find({ list: { $elemMatch: { company: '1' } } });
+    console.log(rawProducts);
+    res.json(rawProducts);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.get('/soldProduct/comp2', async (req, res) => {
+  try {
+    const rawProducts = await rawProduct.find({ list: { $elemMatch: { company: '2' } }});
+    console.log(rawProducts);
+    res.json(rawProducts);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 router.post('/',async (req,res) => {
   const {date, company, q, model, total} = req.body
 
@@ -75,7 +106,19 @@ router.post('/rawProduct',async (req,res) => {
 
   try{
     const newProduct = await rawProduct.create({date,company,where,source,tones,rate,extraCharge})
-    res.status(200).json(rawProduct)
+    res.status(200).json(newProduct)
+  }catch(err){
+    res.status(400).json({error : err.message})
+  }
+  
+})
+
+router.post('/soldProduct',async (req,res) => {
+  const {date,name, list, extraCharge} = req.body
+
+  try{
+    const newProduct = await soldProduct.create({date,name,list,extraCharge})
+    res.status(200).json(newProduct)
   }catch(err){
     res.status(400).json({error : err.message})
   }

@@ -1,0 +1,65 @@
+body{
+  height: 100%;
+}
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rm{
+  width: 100%;
+}
+
+.raw{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+input,select{
+  margin-top: 10px;
+  background-color: hsla(0, 0%, 50%, 0.0);
+  border: 1px solid hsla(0, 0%, 50%, 0.466);
+  border-radius: 5px;
+}
+#date{
+  margin-left: 55px;
+}
+#quality{
+  margin-left: 38px;
+}
+#model{
+  margin-left: 40px;
+}
+#total{
+  margin-left: 54px;
+}
+#rate{
+  margin-left: 56px;
+}
+#customerName{
+  margin-left: 46px;
+}
+select{
+  margin-left: 20px;
+}
+.submit{
+ display: flex;
+ width: 270px;
+ justify-content: center;
+ margin-top: 20px;
+}
+
+button{
+  padding: 5px 20px;
+  border-radius: 10px;
+}
+
+.comp{
+  text-align: start;
+}
