@@ -114,8 +114,8 @@ const TableBody = ({data}) => {
     Math.floor(productCalculatedTotal);
   });
 
-  labourTotal = labourCalculatedTotal;
-  productTotal = productCalculatedTotal;
+  labourTotal = Math.floor(labourCalculatedTotal);
+  productTotal = Math.floor(productCalculatedTotal);
 
   },[data] ); // Dependency array with data
   return(
