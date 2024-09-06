@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Header from './Header'
-import Nav from './nav'
+import Nav from './Nav'
 import './App.css'
 
 function App() {

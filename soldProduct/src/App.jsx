@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import SoldContent from './soldContent'
+import SoldContent from './SoldContent'
 
 function App() {
   const [count, setCount] = useState(0)

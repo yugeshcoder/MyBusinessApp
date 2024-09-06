@@ -5,7 +5,7 @@ let datePost, qPost, modelPost,compPost;
 
 function Header() {
   const [date, setDate] = useState('');
-  const [q, setQ] = useState('1');
+  const [q, setQ] = useState('2');
   const [model, setModel] = useState('');
   const [comp, setComp] = useState('2');
 
