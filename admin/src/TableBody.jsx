@@ -104,12 +104,14 @@ const TableBody = ({data}) => {
   let labourCalculatedTotal = 0;
   data.forEach(labour =>{
     labourCalculatedTotal += (Number(labour.total)) * labourCost[labour.model];
+    Math.floor(labourCalculatedTotal);
   });
 
   let productCalculatedTotal = 0;
   data.forEach(product =>{
     const productTotalKey = `${product.model}_${product.q}`;
     productCalculatedTotal +=(Number(product.total) * productCost[productTotalKey]);
+    Math.floor(productCalculatedTotal);
   });
 
   labourTotal = labourCalculatedTotal;
