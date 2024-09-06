@@ -127,8 +127,8 @@ const TableBody = ({data}) => {
           <td>{proInfo.q}</td>
           <td>{proInfo.model}</td>
           <td>{proInfo.total}</td>
-          <td>{Number(proInfo.total) * labourCost[proInfo.model]}</td>
-          <td>{Number(proInfo.total) * productCost[productKey]}</td>
+          <td>{Math.floor(Number(proInfo.total) * labourCost[proInfo.model])}</td>
+          <td>{Math.floor(Number(proInfo.total) * productCost[productKey])}</td>
         </tr>
         );
       })}
