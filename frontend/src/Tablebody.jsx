@@ -72,7 +72,7 @@ return (
               />
             </td>
             <td>{feetCalc[index] * pieces[index]}</td>
-          </tr>
+          </tr> 
         ))}
       </tbody>
     </table>
