@@ -29,6 +29,8 @@ const Footer = () => {
 
         if (response.ok) {
           setDone(true);
+          // Reload the page after success
+          window.location.reload();
         } else {
           console.error('Failed to post data');
         }
