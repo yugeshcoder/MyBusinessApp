@@ -4,7 +4,8 @@ import { useState } from "react";
 const Footer = () => {
   const [rawTotal, setRawTotal] = useState("0");
 setTimeout(()=>{
-  setRawTotal(getRawTotal());
+  const [total,labourTotal] = getRawTotal();
+  setRawTotal(total);
 },10);
  
  console.log(rawTotal);
