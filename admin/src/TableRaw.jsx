@@ -12,6 +12,7 @@ const TableRaw = ({raw}) => {
           <th>Source</th>
           <th>Tones</th>
           <th>Rate</th>
+          <th>Labour Charge</th>
           <th>Extra Charge</th>
           <th>Total raw-cost</th>
         </tr>

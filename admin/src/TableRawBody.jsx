@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 let total = 0;
+let labourTotal = 0;
 export function getRawTotal(){
-  return total;
+  return [total,labourTotal];
 }
 const TableRawBody = ({raw}) => {
   const [info, setInfo] = useState(Array.isArray(raw) ? raw : []);
@@ -15,7 +16,12 @@ const TableRawBody = ({raw}) => {
     calculatedTotal += rawInfo.extraCharge + (rawInfo.tones * rawInfo.rate);
   });
   setRawTotal(calculatedTotal);
-  total = calculatedTotal;
+  total = Math.floor(calculatedTotal);
+  let calculatedLabourTotal = 0;
+  raw.forEach(rawInfo => {
+    calculatedLabourTotal += (rawInfo.tones*0.001*600);
+  });
+  labourTotal = Math.floor(calculatedLabourTotal);
   },[raw] ); // Dependency array with data
   
   return(
@@ -28,8 +34,9 @@ const TableRawBody = ({raw}) => {
           <td>{rawInfo.source}</td>
           <td>{rawInfo.tones}</td>
           <td>{rawInfo.rate}</td>
+          <td>{Math.floor(rawInfo.tones*0.001*600)}</td>
           <td>{rawInfo.extraCharge}</td>
-          <td>{rawInfo.extraCharge + ((rawInfo.tones) * (rawInfo.rate))}</td>
+          <td>{Math.floor(rawInfo.extraCharge + ((rawInfo.tones) * (rawInfo.rate)))}</td>
         </tr>
       ))}
     </tbody>
