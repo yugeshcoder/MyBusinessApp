@@ -105,9 +105,9 @@ const Nav = () =>{
       <h1>Productions</h1>
       <Table data={info}/>
       <ProductFooter/>
-      <h1>Sold Products</h1>
+      {/* <h1>Sold Products</h1>
       <TableSold sold={soldInfo} all={all} comp1={comp1} comp2={comp2}/>
-      <SoldFooter/>
+      <SoldFooter/> */}
       <h1>Business analytics</h1>
       <Stack/>
     </>
