@@ -9,6 +9,7 @@ const Footer = () => {
   const [done, setDone] = useState(false);
 
   const handleclick = async () => {
+    setDone(true);
     const { datePost, qPost, modelPost, compPost } = postparam();
     let post = {
       date: datePost,
@@ -28,7 +29,6 @@ const Footer = () => {
         });
 
         if (response.ok) {
-          setDone(true);
           // Reload the page after success
           window.location.reload();
         } else {

@@ -75,6 +75,7 @@ function Header() {
             <option value="AD_18_18"/>
             <option value="AE_32_10"/>
             <option value="AE_22_10"/>
+            <option value="CB_12_6"/>
             <option value="CB_20_8"/>
             <option value="CB_25_8"/>
             <option value="CB_32_8"/>
