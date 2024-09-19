@@ -30,8 +30,8 @@ const labourCost = {
   AE_35_22: 1,
   AE_45_28: 1,
   BZ_25_6: 0.60,
-  Bundle: 35
-
+  Bundle: 35,
+  CB_12_6: .60
 };
 
 const productCost = {
@@ -83,6 +83,7 @@ const productCost = {
   AB_35_35_1: 28,
   AE_22_10_1: 6,
   AE_32_10_1: 10,
+  CB_12_6_1 : 2,
   CB_20_8_1: 5,
   CB_25_8_1: 6,
   CB_32_8_1: 8,
