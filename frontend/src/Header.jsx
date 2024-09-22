@@ -63,6 +63,8 @@ function Header() {
             <option value="P_45_6"/>
             <option value="P_35_10"/>
             <option value="P_45_10"/>
+            <option value="pvc_15_12"/>
+            <option value="pvc_18_18"/>
             <option value="pvc_18_18"/>
             <option value="pvc_1_18"/>
             <option value="AB_12_12"/>
